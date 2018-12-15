@@ -25,6 +25,9 @@ const processFn = (fn, options) => function (...args) {
 					resolve(result);
 				}
 			});
+			if(options.isFirstCallback){
+				args = [args.pop()].concat(args)
+			}
 		} else {
 			args.push(resolve);
 		}
@@ -37,6 +40,7 @@ module.exports = (input, options) => {
 	options = Object.assign({
 		exclude: [/.+(Sync|Stream)$/],
 		errorFirst: true,
+		isFirstCallback:true,
 		promiseModule: Promise
 	}, options);
 
