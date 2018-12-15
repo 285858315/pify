@@ -1,6 +1,6 @@
 {
   "name": "pify-first-callback",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Promisify a callback-style function",
   "license": "MIT",
   "repository": {
